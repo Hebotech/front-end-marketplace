@@ -1,0 +1,22 @@
+{
+  "name": "markeplace-hebotech",
+  "version": "1.0.0",
+  "description": "This is the front end for the hebo marketplace",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Hebotech/front-end-marketplace.git"
+  },
+  "keywords": [
+    "hello"
+  ],
+  "author": "IrfDev",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Hebotech/front-end-marketplace/issues"
+  },
+  "homepage": "https://github.com/Hebotech/front-end-marketplace#readme"
+}
