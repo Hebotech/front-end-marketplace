@@ -1,27 +1,37 @@
 <template>
   <div>
+    <navi/>
     <nuxt />
+    <v-footer/>
   </div>
 </template>
 
-<style>
-html {
-  font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI',
-    Roboto, 'Helvetica Neue', Arial, sans-serif;
-  font-size: 16px;
-  word-spacing: 1px;
-  -ms-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  box-sizing: border-box;
-}
+<script>
+import Navi from '@/components/organisms/layout/Nav.vue';
+import vFooter from '@/components/organisms/layout/Footer.vue';
 
+export default {
+  components: {
+    Navi,
+    vFooter
+  },
+};
+</script>
+
+<style>
 *,
 *:before,
 *:after {
   box-sizing: border-box;
   margin: 0;
+}
+
+@font-face {
+    font-family: 'ThirdRail';
+    src: url('/fonts/third_rail_-_demo-webfont.woff2') format('woff2'),
+         url('/fonts/third_rail_-_demo-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
 }
 
 .button--green {
