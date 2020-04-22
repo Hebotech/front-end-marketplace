@@ -1,72 +1,74 @@
 <template>
-  <div class="container">
-    <div>
-      <logo />
-      <h1 class="title">
-        hebo-market-place
-      </h1>
-      <h2 class="subtitle">
-        This is the Hebotech Marketplace
-      </h2>
-      <div class="links">
-        <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          class="button--green"
-        >
-          Documentation
-        </a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          class="button--grey"
-        >
-          GitHub
-        </a>
-      </div>
-    </div>
+  <div>
+    <SfAccordion
+      :open="open"
+      :multiple="multiple"
+      :show-chevron="showChevron"
+      :transition="transition"
+    >
+      <SfAccordionItem
+        v-for="accordion in accordions"
+        :key="accordion.header"
+        :header="accordion.header"
+      >
+        <SfList>
+          <SfListItem v-for="item in accordion.items" :key="item.label">
+            <SfMenuItem :label="item.label" :count="item.count" />
+          </SfListItem>
+        </SfList>
+      </SfAccordionItem>
+    </SfAccordion>
   </div>
 </template>
-
 <script>
-import Logo from '~/components/Logo.vue'
+import { SfAccordion, SfList, SfMenuItem } from '@storefront-ui/vue'
 
 export default {
   components: {
-    Logo
+    SfAccordion,
+    SfList,
+    SfMenuItem
+  },
+  data () {
+    return {
+      accordions: [
+        {
+          header: 'Clothing',
+          items: [
+            { label: 'All', count: '280' },
+            { label: 'Skirts', count: '11' },
+            { label: 'Dresses', count: '32' }
+          ]
+        },
+        {
+          header: 'Accessories',
+          items: [
+            { label: 'All', count: '80' },
+            { label: 'Belts', count: '101' },
+            { label: 'Bag', count: '2' }
+          ]
+        },
+        {
+          header: 'Shoes',
+          items: [
+            { label: 'All', count: '2' },
+            { label: 'Trainers', count: '22' },
+            { label: 'Sandals', count: '55' }
+          ]
+        }
+      ],
+      open: 'Clothing',
+      multiple: false,
+      showChevron: false,
+      transition: 'fade'
+    }
   }
 }
 </script>
 
-<style>
-.container {
-  margin: 0 auto;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
-.title {
-  font-family: 'Quicksand', 'Source Sans Pro', -apple-system, BlinkMacSystemFont,
-    'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
-}
-
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
-}
-
-.links {
-  padding-top: 15px;
-}
+<style lang="scss" scoped>
+  div{
+    display:flex;
+    max-width:10vw;
+  }
 </style>
