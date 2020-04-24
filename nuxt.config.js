@@ -5,7 +5,7 @@ export default {
         extend(config, ctx) {}
     },
     router: {
-        mode: 'hash'
+        mode: 'history'
     },
     head: {
         title: process.env.npm_package_name || '',
