@@ -1,23 +1,16 @@
 <template>
   <div>
-      <banner/>
-      <category-nav/>
-      <side-bar/>
+      <h1>
+        Holaaaaa
+      </h1>
   </div>
 </template>
 
 <script>
-import SideBar from '@/components/organisms/layout/SideBar';
-import Banner from '@/components/molecules/Banner.vue';
-import CategoryNav from '@/components/molecules/CategoryNav.vue';
-
 export default {
     name: 'CategoriesPage',
     layout: 'shop',
     components: {
-      CategoryNav,
-      Banner,
-      SideBar,
     },
 };
 </script>
