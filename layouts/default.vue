@@ -1,7 +1,9 @@
 <template>
   <div>
     <navi/>
-    <nuxt />
+    <nuxt
+      class="main-content"
+    />
     <v-footer/>
   </div>
 </template>
@@ -13,7 +15,7 @@ import vFooter from '@/components/organisms/layout/Footer.vue';
 export default {
   components: {
     Navi,
-    vFooter
+    vFooter,
   },
 };
 </script>
@@ -61,5 +63,8 @@ export default {
 .button--grey:hover {
   color: #fff;
   background-color: #35495e;
+}
+.main-content{
+  margin-top:8vw;
 }
 </style>
