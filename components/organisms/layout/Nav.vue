@@ -1,30 +1,38 @@
 <template>
-<div>
-<SfHeader
-    :title="title"
-    :logo="'/images/basic/logo.png'"
-    :active-icon="activeIcon"
-    :has-mobile-search="hasMobileSearch"
-    :search-placeholder="searchPlaceholder"
-    :cart-icon="cartIcon"
-    :wishlist-icon="wishlistIcon"
-    :is-sticky="isSticky"
-    :account-icon="accountIcon"
-    :cart-items-qty="cartItemsQty"
-    @click:cart="alert('@click:cart')"
-    @click:wishlist="alert('@click:wishlist')"
-    @click:account="alert('@click:account')"
->
-    <template #navigation>
-    <SfHeaderNavigationItem v-for="item in navigation" :key="item">
-        <nuxt-link to="/" :style="{ display: 'flex', alignItems: 'center', justifyContent: 'space-around', height: '100%' }">
+  <div>
+    <SfHeader
+      :title="title"
+      :logo="'/images/basic/logo.png'"
+      :active-icon="activeIcon"
+      :has-mobile-search="hasMobileSearch"
+      :search-placeholder="searchPlaceholder"
+      :cart-icon="cartIcon"
+      :wishlist-icon="wishlistIcon"
+      :is-sticky="isSticky"
+      :account-icon="accountIcon"
+      :cart-items-qty="cartItemsQty"
+      @click:cart="alert('@click:cart')"
+      @click:wishlist="alert('@click:wishlist')"
+      @click:account="alert('@click:account')"
+    >
+      <template #navigation>
+        <SfHeaderNavigationItem v-for="item in navigation" :key="item">
+          <nuxt-link
+            to="/"
+            :style="{
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'space-around',
+              height: '100%'
+            }"
+          >
             {{ item }}
-        </nuxt-link>
-    </SfHeaderNavigationItem>
-    </template>
-</SfHeader>
-<StoriesPlaceholder #placeHolder :mobile="isMobile" />
-</div>
+          </nuxt-link>
+        </SfHeaderNavigationItem>
+      </template>
+    </SfHeader>
+    <StoriesPlaceholder #placeHolder :mobile="isMobile" />
+  </div>
 </template>
 
 <script>
@@ -32,7 +40,7 @@ import { SfHeader } from "@storefront-ui/vue";
 import { StoriesPlaceholder } from "@storefront-ui/vue";
 
 export default {
-    name: 'Nav',
+  name: "Nav",
   components: {
     SfHeader,
     StoriesPlaceholder
