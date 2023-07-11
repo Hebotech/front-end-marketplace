@@ -15,7 +15,7 @@
     "dependencies": {
         "@nuxtjs/axios": "^5.3.6",
         "@nuxtjs/dotenv": "^1.4.0",
-        "@storefront-ui/vue": "^0.6.4",
+        "@storefront-ui/vue": "^2.5.0",
         "nuxt": "^2.0.0"
     },
     "devDependencies": {
